@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+      integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="recezervacije.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body onload="fetchReservations()">
+    <div class="wrapper">
+      <div>
+        <h1
+          class="rezervacijeNaslov"
+          style="
+            font-size: 4rem;
+            margin-top: 8%;
+            font-weight: 700;
+            opacity: 0.8;
+          "
+        >
+          Rezervacije
+        </h1>
+      </div>
+
+      <div class="container">
+        <div style="display: flex; flex-direction: row; align-items: center">
+          <button
+            class="btn btn-outline-light"
+            id="newrs"
+            style="
+              outline: rgb(59, 27, 1);
+              font-weight: 600;
+              margin-bottom: 1.7%;
+              font-weight: 400;
+              font-size: 1.1rem;
+            "
+            onclick="newReservation()"
+          >
+           <button
+            class="btn btn-outline-light"
+            value="Reload Page" 
+            onClick="document.location.reload(true)" 
+            id="newrs"
+            style="
+              outline: rgb(59, 27, 1);
+              font-weight: 600;
+              margin-bottom: 1.7%;
+              font-weight: 400;
+              font-size: 1.1rem; margin-left: 3%;
+            "
+           
+          >
+           Povratak na rezervacije
+          </button>
+          <i class="fas fa-search ml-auto text-white text-right w-100 mx-3"></i
+          ><input
+            type="text"
+            placeholder="Pretraži"
+            class="form-control ml-auto w-25 my-4"
+            id="search"
+            onkeyup="search()"
+          />
+        </div>
+        <table class="table" style="font-size: 1.2rem">
+          <thead style="background-color: rgb(184, 160, 115); opacity: 0.7">
+            <tr>
+              <th scope="col">ID gosta</th>
+              <th scope="col">Broj hotelske sobe</th>
+              <th scope="col">Vreme prijave u hotel</th>
+              <th scope="col">Vreme odjave iz hotela</th>
+            </tr>
+          </thead>
+          <tbody id="content"></tbody>
+        </table>
+        <div id="no-content-found"></div>
+      </div>
+    </div>
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+    crossorigin="anonymous"
+  ></script>
+  <script src="fetch.js"></script>
+</html>
